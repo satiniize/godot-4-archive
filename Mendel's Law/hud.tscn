@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4qux2cxgtb2q"]
+
+[ext_resource type="Script" path="res://crosshair.gd" id="1_rbdou"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Crosshair" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_rbdou")

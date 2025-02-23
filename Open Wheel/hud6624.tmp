@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhqyoeojs2xo3"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_ny4e7"]
+[ext_resource type="Script" path="res://drawer.gd" id="2_ridpc"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ny4e7")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(112, 551)
+
+[node name="Console" type="PopupPanel" parent="."]
+title = "Open Wheel Debug Console"
+initial_position = 1
+size = Vector2i(512, 256)
+unresizable = false
+borderless = false
+always_on_top = true
+content_scale_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Console"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 508.0
+offset_bottom = 252.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CommandHistory" type="RichTextLabel" parent="Console/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+autowrap_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Console/VBoxContainer"]
+layout_mode = 2
+
+[node name="Command" type="LineEdit" parent="Console/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+placeholder_text = "Enter commands here"
+
+[node name="Submit" type="Button" parent="Console/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Submit"
+
+[node name="Drawer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_ridpc")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="text_submitted" from="Console/VBoxContainer/HBoxContainer/Command" to="." method="_on_command_text_submitted"]
+[connection signal="pressed" from="Console/VBoxContainer/HBoxContainer/Submit" to="." method="_on_submit_pressed"]

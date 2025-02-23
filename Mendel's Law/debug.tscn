@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://bpe5jhafs6xss"]
+
+[ext_resource type="PackedScene" uid="uid://dmdgukbnp1ro4" path="res://player.tscn" id="1_d66aj"]
+[ext_resource type="Script" path="res://debug.gd" id="1_v2hmt"]
+[ext_resource type="Texture2D" uid="uid://cfwp5sel8s0ls" path="res://icon.svg" id="2_f3grg"]
+[ext_resource type="PackedScene" uid="uid://b4qux2cxgtb2q" path="res://hud.tscn" id="2_ogn5y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_76et4"]
+albedo_texture = ExtResource("2_f3grg")
+uv1_triplanar = true
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tkkfj"]
+
+[sub_resource type="Sky" id="Sky_22v8d"]
+sky_material = SubResource("ProceduralSkyMaterial_tkkfj")
+
+[sub_resource type="Environment" id="Environment_1seyp"]
+background_mode = 2
+sky = SubResource("Sky_22v8d")
+
+[node name="Debug" type="Node3D"]
+script = ExtResource("1_v2hmt")
+
+[node name="HUD" parent="." instance=ExtResource("2_ogn5y")]
+
+[node name="Player" parent="." instance=ExtResource("1_d66aj")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -1, -7.5)
+material_override = SubResource("StandardMaterial3D_76et4")
+use_collision = true
+size = Vector3(21, 2, 25)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+polygon = PackedVector2Array(0, 0, -8, 0, 7, 4, 7, 0)
+depth = 5.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 3, 0)
+shadow_enabled = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+billboard = 2
+texture = ExtResource("2_f3grg")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1seyp")
