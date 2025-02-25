@@ -12,8 +12,9 @@ albedo_texture = ExtResource("1_21o5d")
 uv1_triplanar = true
 
 [sub_resource type="Curve3D" id="Curve3D_wibxy"]
+bake_interval = 0.01
 _data = {
-"points": PackedVector3Array(-57.6049, 0, -3.39867, 57.6049, 0, 3.39867, 173.619, 0, -86.9067, 0.346207, 0, -12.2902, -0.346207, 0, 12.2902, 195.758, 0, -7.81531, -11.2004, 0, -15.5173, 11.2004, 0, 15.5173, 211.64, 0, 32.05, 98.6339, 0, -32.5765, -98.6339, 0, 32.5765, 188.427, 0, 104.5, 54.6472, 0, -23.8547, -54.6472, 0, 23.8547, 126.465, 0, 5.706, 45.852, 0, -15.6376, -45.852, 0, 15.6376, 48.988, 0, 89.748, 32.2837, 0, -1.70976, -32.2837, 0, 1.70976, 32.603, 0, 30.246, 34.3428, 0, 34.8923, -34.3428, 0, -34.8923, -49.765, 0, -30.591, -68.8343, 0, -3.82413, 68.8343, 0, 3.82413, -77.8761, 0, -89.8724),
+"points": PackedVector3Array(-57.6049, 0, -3.39867, 57.6049, 0, 3.39867, 173.619, 0, -86.9067, 0.346207, 0, -12.2902, -0.346207, 0, 12.2902, 195.758, 0, -7.81531, -11.2004, 0, -15.5173, 11.2004, 0, 15.5173, 211.64, 0, 32.05, 98.6339, 0, -32.5765, -98.6339, 0, 32.5765, 188.427, 0, 104.5, 54.6472, 0, -23.8547, -54.6472, 0, 23.8547, 126.465, 0, 5.706, 45.852, 0, -15.6376, -45.852, 0, 15.6376, 48.9255, 0, 88.3695, 34.9762, 0, 18.0992, -34.9762, 0, -18.0992, 36.6631, 0, -9.91617, 34.3428, 0, 34.8923, -34.3428, 0, -34.8923, -82.4374, 0, -3.31651, -68.8343, 0, -3.82413, 68.8343, 0, 3.82413, -29.6565, 0, -89.8724),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 9
@@ -38,8 +39,8 @@ script = ExtResource("1_2bh5b")
 [node name="Car" parent="." node_paths=PackedStringArray("controller") instance=ExtResource("2_wn2xk")]
 transform = Transform3D(0.312865, 0, 0.949797, 0, 1, 0, -0.949797, 0, 0.312865, 30, 2, 32)
 controller = NodePath("../Player")
-longitudinal_friction_coefficient = 1.0
-lateral_friction_coefficient = 1.0
+longitudinal_friction_coefficient = 1.5
+lateral_friction_coefficient = 1.5
 
 [node name="HUD" parent="." node_paths=PackedStringArray("car") instance=ExtResource("1_g4y4s")]
 car = NodePath("../Car")
@@ -51,7 +52,7 @@ use_collision = true
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
 use_collision = true
-size = Vector3(574, 1, 335.454)
+size = Vector3(5000, 1, 5000)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.568, -0.6, -1155.62)
@@ -62,7 +63,7 @@ size = Vector3(78.2881, 1, 2045.12)
 curve = SubResource("Curve3D_wibxy")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.36256, 0, 0.931937, 0, 1, 0, -0.931937, 0, 0.36256, 37.8737, 0, 30.9039)
+transform = Transform3D(0.983994, 0, -0.178076, 0, 1, 0, 0.178076, 0, 0.983994, 45.6599, 0, 24.6688)
 progress = 618.998
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D"]

@@ -7,7 +7,7 @@
 friction = 0.0
 
 [sub_resource type="Curve" id="Curve_xj7gq"]
-_data = [Vector2(0, 0.846154), 0.0, 0.0, 0, 0, Vector2(0.849162, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.769231), -2.32468, 0.0, 0, 0]
+_data = [Vector2(0, 0.692), 0.0, 0.0, 0, 0, Vector2(0.690647, 0.996), 0.0, 0.0, 0, 0, Vector2(1, 0.769231), -2.32468, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cubaa"]
