@@ -39,7 +39,7 @@ func poll_discrete_input():
 
 func _physics_process(delta):
 	var target_steer: float = (
-		float(input_state[InputState.STEER_RIGHT]) - 
+		float(input_state[InputState.STEER_RIGHT]) -
 		float(input_state[InputState.STEER_LEFT])
 	)
 	control_value[ControlValue.STEER] = move_toward(
@@ -54,7 +54,7 @@ func _physics_process(delta):
 		target_accelerate,
 		accelerate_speed * delta
 	)
-	
+
 	var target_brake: float = bool(input_state[InputState.BRAKE])
 	control_value[ControlValue.BRAKE] = move_toward(
 		control_value[ControlValue.BRAKE],
@@ -68,9 +68,3 @@ func _physics_process(delta):
 		target_clutch,
 		clutch_speed * delta
 	)
-#func move_to(value: float, target_value: float, step: float):
-	#var difference: float = target_value - value
-	#if abs(difference) > step:
-		#return value + sign(difference) * step
-	#else:
-		#return target_value

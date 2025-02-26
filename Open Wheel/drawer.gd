@@ -12,7 +12,7 @@ var load_rear_right: float = 0.0
 
 var car_relative_velocity: Vector3 = Vector3.ZERO
 
-func _process(delta):
+func _process(_delta):
 	queue_redraw()
 
 func draw_friction_forces(position: Vector2, force: Vector3, load: float):

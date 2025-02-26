@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc2gw6s50pxur"]
+
+[ext_resource type="Script" path="res://car/components/transmission.gd" id="1_2k1fd"]
+
+[node name="Transmission" type="Node"]
+script = ExtResource("1_2k1fd")
