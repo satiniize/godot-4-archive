@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5pjveyc6065i"]
-
-[ext_resource type="Script" path="res://car/components/running_gear.gd" id="1_7re8h"]
-
-[node name="RunningGear" type="Node"]
-script = ExtResource("1_7re8h")

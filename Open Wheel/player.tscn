@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://begfktaemvers"]
-
-[ext_resource type="Script" path="res://player.gd" id="1_dcgnq"]
-
-[node name="Player" type="Node"]
-script = ExtResource("1_dcgnq")
-
-[node name="Camera" type="Camera3D" parent="."]

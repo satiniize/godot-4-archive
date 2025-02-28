@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk16tskqr0vgm"]
-
-[ext_resource type="Script" path="res://car/components/differential.gd" id="1_hav7b"]
-
-[node name="Differential" type="Node"]
-script = ExtResource("1_hav7b")
